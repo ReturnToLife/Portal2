@@ -1,0 +1,32 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+		
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}
+	
+{% block banner %}
+	{{ parent() }}
+	{% include "ReturnEpiWSBundle:WS:banner.html.twig" %}
+{% endblock %}
+		
+{% block header %}
+	{{ parent() }}
+	{% include "ReturnEpiWSBundle:WS:header.html.twig" %}
+{% endblock %}
+		
+{% block content %}
+	{{ parent() }}
+{% endblock %}
+		
+{% block footer %}
+	{{ parent() }}
+	{% include "ReturnEpiWSBundle:WS:footer.html.twig" %}
+{% endblock %}

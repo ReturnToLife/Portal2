@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>
+		{% block title %}
+		Return-to_life
+		{% endblock %}
+		</title>
+
+		{% block stylesheets %}
+			<link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" />
+		{% endblock %}
+		
+		{% block javascripts %}
+		
+		{% endblock %}
+	</head>
+
+	<body>
+		<div class="topws">
+			<div class="divbanner">
+			{% block banner %}
+			{% endblock %}
+			</div>
+			<div class="divheader">
+			{% block header %}
+			{% endblock %}
+			</div>
+		</div>
+		<div class="divcontent">
+		<br />
+		{% block content %}
+		{% endblock %}
+		</div>
+		<div class="divfooter">
+		{% block footer %}
+		{% endblock %}
+		<div/>
+			<footer>
+				The sky's the limit &copy;JW
+			</footer>
+		</div>
+	</body>
+</html>

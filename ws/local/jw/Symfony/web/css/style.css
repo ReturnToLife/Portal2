@@ -1,0 +1,153 @@
+@CHARSET "UTF-8";
+
+body
+{
+	position:relative;
+	width:1024px;	
+	margin:auto;
+	font-size:14px;
+	font-family:Arial;
+	text-align:justify;
+}
+
+.divbanner
+{
+	float:left;
+	width:60%;
+	border:1px solid blue;
+	position:relative;
+}
+
+.divheader
+{
+	float:right;
+	width:37%;
+	border:1px solid green;
+	position:relative;
+}
+
+.divcontent
+{
+	float:left;
+	width:94%;
+	height:75%;
+	margin-left:3%;
+	margin-right:3%;
+	border:1px solid red;
+	position:relative;
+}
+
+.divfooter
+{
+	float:left;
+	width:100%;
+	border:1px solid black;
+	position:relative;
+}
+
+.divdev
+{
+	float:left;
+	width:100%;
+	border:1px solid magenta;
+	position:relative;
+}
+
+.row
+{
+	margin-left:2%;
+	margin-right:2%;
+}
+
+.rowarticles
+{
+	height:19.8%;
+	width:96%;
+	margin-left:2%;
+	margin-right:2%;
+}
+
+.title
+{
+	text-align:center;
+	font-family:ComicMS;
+	font-size:26px;"
+	bold:bold;	
+}
+
+.divindexflash
+{
+	float:right;
+	width:20%;
+	height:95%;
+	border:1px solid magenta;
+}
+
+.divindexevent
+{
+	float:left;
+	width:77%;
+	height:23%;
+	border:1px solid cyan;
+}
+
+.divindexarticle
+{
+	float:left;
+	width:77%;
+	height:73%;
+	border:1px solid green;
+}
+
+.divflash
+{
+	height:19.8%;
+	border:1px solid blue;
+}
+
+.divflashcontent
+{
+	height:85%;
+	border:1px solid green;
+}
+
+.divevent
+{
+	width:49%;
+	border:1px solid black;
+}
+
+.divartleft
+{
+	float:left;
+	width:49.7%;
+	height:49.7%;
+	border:1px solid grey;
+}
+
+.divartright
+{
+	float:right;
+	width:49.7%;
+	height:49.7%;
+	border:1px solid grey;
+}
+
+.divassoevent
+{
+	float:left;
+	width:100%;
+	height:23%;
+	border:1px solid cyan;
+}
+
+.red
+{
+	color:#FF0000;	
+}
+
+a
+{
+	cursor:pointer;
+	color:#0000CC;
+}

@@ -1,0 +1,19 @@
+{% extends '::base.html.twig' %}
+
+{% form_theme form 'PortalPublicationBundle:Form:fields.html.twig' %}
+
+{% block title %}
+    Flashnews Publication
+{% endblock %}
+
+{% block body %}
+<form action="{{ path('pub_flashnews') }}" method="post" {{ form_enctype(form) }}>
+  {{ form_errors(form) }}
+
+  {{ form_row(form.content) }}
+
+  {{ form_rest(form) }}
+
+  <input type="submit" />
+</form>
+{% endblock %}

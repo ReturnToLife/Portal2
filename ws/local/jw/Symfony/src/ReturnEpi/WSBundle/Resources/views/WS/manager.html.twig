@@ -1,0 +1,48 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}
+
+{% block banner %}
+	{{ parent() }}
+	{% include "ReturnEpiWSBundle:WS:assobanner.html.twig" with {"name" : name} %}
+{% endblock %}
+
+{% block header %}
+	{{ parent() }}
+	{% include "ReturnEpiWSBundle:WS:assoheader.html.twig" with {"visible" : visible,
+"name" : name} %}
+{% endblock %}
+
+{% block content %}
+	{{ parent() }}
+	<div style="float:right;"><a href="{{ path('WS_assos') }}">
+	Retour à la liste de mes assos</a></div><br />
+	<strong>Les outils de gestion auquels j'ai accès pour l'association {{ name }} :</strong><br />
+	{% for item in tools %}
+		&nbsp;&nbsp; <a href="{{ path('WS_manager', {'name' : name, 'tool' : item['name']}) }}">
+		{{ item["name"] }}</a>
+	{% endfor %}
+	<h1>{{ tool }} manager</h1>
+	{% if id is not empty %}
+		{% include "ReturnEpiWSBundle:WS:"~tool|lower~"manageritem.html.twig" with {"infos" : infos} %}
+	{% else %}
+		{% include "ReturnEpiWSBundle:WS:"~tool|lower~"manager.html.twig" with {"infos" : infos} %}
+	{% endif %}
+	<br /><div style="float:right;"><a href="{{ path('WS_assos') }}">
+	Retour à la liste de mes assos</a></div><br /><br />
+{% endblock %}
+
+{% block footer %}
+	{{ parent() }}
+	{% include "ReturnEpiWSBundle:WS:assofooter.html.twig" with {"asso" : asso} %}
+{% endblock %}

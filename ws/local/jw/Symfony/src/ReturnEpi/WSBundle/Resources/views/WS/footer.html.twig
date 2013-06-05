@@ -1,0 +1,9 @@
+{% if app.session.get("student") != null %}
+	<fieldset style="float:right;"><legend> Recherche générale </legend>
+	<br /><form method="post" name="dcform" action="{{ path('WS_search') }}">
+			<input type="text" name="searchval" id="searchval" />
+			<input type="submit" value="Chercher" name="sendsearch" id="sendsearch" />
+	</form></fieldset>
+{% else %}
+<h1>Footer here</h1>
+{% endif %}

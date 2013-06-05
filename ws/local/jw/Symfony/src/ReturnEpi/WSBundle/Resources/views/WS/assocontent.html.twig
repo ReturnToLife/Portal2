@@ -1,0 +1,39 @@
+{% if tool is not empty %}
+		<h1>{{ tool }} de l'association {{ name }}</h1>
+		{% include "ReturnEpiWSBundle:WS:"~tool|lower~"display.html.twig" with {"infos" : infos} %}
+	{% else %}
+	<div class="divassoevent">
+	{% block event %}
+		<div class="divevent" style="float:left;">
+			{% block event1 %}
+			<div style="width:45%;height:100%;float:left;"><img style="width:100%;" src='
+			{% if events[0]["image"] %} events[0]["image"]
+			{% else %} {{ asset("images/default.gif") }} {% endif %}' /> {{ events[0]["image"] }} </div>
+			<div class="row">
+				<div style="width:55%;height:100%;float:right;"><b>{{ events[0]["titre"]|raw }}</b><br />
+				{{ events[0]["contenu"]|raw }}<br /><br />
+				<div style="float:right;">{% if events[0]["parution"] != 0 %}
+				<strong>Date de l'event</strong><br/> {{ events[0]["parution"] }}{% endif %}</div></div>
+			</div>
+			{% endblock %}
+		</div>
+		<div class="divevent" style="float:right;">
+			{% block event2 %}
+			<div style="width:45%;height:100%;float:left;"><img style="width:100%;" src='
+			{% if events[1]["image"] %} events[1]["image"]
+			{% else %} {{ asset("images/default.gif") }} {% endif %}' /></div>
+			<div class="row">
+				<div style="width:55%;height:100%;float:right;"><b>{{ events[1]["titre"]|raw }}</b><br />
+				{{ events[1]["contenu"]|raw }}<br /><br />
+				<div style="float:right;">{% if events[1]["parution"] != 0 %}
+				<strong>Date de l'event</strong><br/> {{ events[1]["parution"] }}{% endif %}</div></div>
+			</div>
+			{% endblock %}
+		</div>
+	{% endblock %}
+	</div>
+
+	<h1> Page vitrine de l'asso {{ name }}</h1>
+	{{ asso["content"]|raw }}
+	
+	{% endif %}

@@ -1,0 +1,55 @@
+{% extends "ReturnEpiWSBundle::layout.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}
+
+{% block banner %}
+	{{ parent() }}
+{% endblock %}
+
+{% block header %}
+	{{ parent() }}
+{% endblock %}
+
+{% block content %}
+	{% for item in articles %}
+		<div class="rowarticles"
+			{% if loop.index is even %} style="background-color:#EEEEFF;"
+			{% else %} style="background-color:#EEFFEE;"
+			{% endif %}>
+			<br />
+			<div style="width:25%; position:absolute; margin-left:2%;">
+			<img style="width:100%;" src='
+				{% if item["image"] %} item["image"]
+				{% else %} {{ asset("images/default.gif") }} {% endif %}' />
+				{{ item["image"] }} <br /><br />
+				<div class="row">
+					Publication : {{ item["parution"] }}<br />
+					Concernés : {{ item["ecole"]|raw }}<br />
+					Promotion : {{ item["promo"]|raw }}<br />
+					Ville : {{ item["ville"]|raw }}<br />
+				</div>
+			</div>
+			<div class="rowarticlescontent" style="margin-left:30%;">
+				<a href="{{ path('WS_article', {'id': item['id']}) }}">
+				<h1>{{ item["titre"]|raw }}</h1><br /></a>
+				<div class="row" ><strong>Preview :</strong><br />
+				{{ item["contenu"]|raw }} </div>
+			</div>
+			<br />
+		</div>
+	{% endfor %}
+{% endblock %}
+
+{% block footer %}
+	{{ parent() }}
+{% endblock %}

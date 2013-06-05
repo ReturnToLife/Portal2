@@ -1,0 +1,16 @@
+
+{% if app.session.get("student") != null %}
+	<br /><form method="post" name="dcform">
+	&nbsp;&nbsp;<a href="{{ path('WS_accueil') }}">Index</a>
+	&nbsp;&nbsp;<a href="{{ path('WS_publications') }}">Publications</a>
+	&nbsp;&nbsp;<a href="{{ path('WS_groupes') }}">Mes groupes</a>
+	&nbsp;&nbsp;<a href="{{ path('WS_assos') }}">Assos</a>
+		<input type="submit" value="Disconnect" name="senddc" id="senddc" style="float:right;" />
+	</form><br />
+{% else %}
+<br /><form method="post" name="loginform"><strong>
+	Login <input type="text" name="login" id="login" size="10" />&nbsp;&nbsp;
+	Password <input type="password" name="mdp" id="mdp" size="10" />
+	<input type="submit" value="Login" name="sendlogin" id="sendlogin" style="float:right;" />
+</strong></form><br />
+{% endif %}

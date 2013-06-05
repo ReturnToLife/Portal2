@@ -1,0 +1,47 @@
+
+WS_accueil:
+    pattern:   /
+    defaults:  { _controller: ReturnEpiWSBundle:WS:index }
+
+WS_articles:
+    pattern:   /articles/{categ}
+    defaults:  { _controller: ReturnEpiWSBundle:WS:articles }
+    requirements:
+        categ:    \d*
+
+WS_article:
+    pattern:   /article/{id}
+    defaults:  { _controller: ReturnEpiWSBundle:WS:article }
+    requirements:
+        id:    \d*
+
+WS_publications:
+    pattern:   /publications
+    defaults:  { _controller: ReturnEpiWSBundle:WS:publications }
+
+WS_groupes:
+    pattern:   /groupes
+    defaults:  { _controller: ReturnEpiWSBundle:WS:groupes }
+
+WS_assos:
+    pattern:   /assos
+    defaults:  { _controller: ReturnEpiWSBundle:WS:assos }
+
+WS_asso:
+    pattern:   /asso/{name}/{tool}
+    defaults:  { _controller: ReturnEpiWSBundle:WS:asso, tool:"" }
+
+WS_manager:
+    pattern:   /asso/{name}/manage/{tool}/{item}/{id}
+    defaults:  { _controller: ReturnEpiWSBundle:WS:manager, item:"", id:"" }
+    requirements:
+        id:    \d*
+        item:    item
+
+WS_example:
+    pattern:   /example
+    defaults:  { _controller: ReturnEpiWSBundle:WS:example }
+
+WS_search:
+    pattern:   /search
+    defaults:  { _controller: ReturnEpiWSBundle:WS:search }

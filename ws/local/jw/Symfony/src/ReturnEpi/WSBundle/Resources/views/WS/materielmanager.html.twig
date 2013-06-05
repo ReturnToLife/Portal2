@@ -1,0 +1,27 @@
+<div class="row"><form method="post" id="matosdelform">
+<a href="{{ path('WS_manager', {'name' : name, 'tool' : tool|lower, 'item' : 'item', 'id' : 0}) }}">
+Ajouter une entrée</a><br/><br/>
+{% set it = 0 %}
+{% for item in infos["materiel"] %}
+	{% set it = it + 1 %}
+		<div class="row"
+			{% if it is even %} style="background-color:#EEEEFF;"
+			{% else %} style="background-color:#EEFFEE;"
+			{% endif %} ><br />
+			<strong>{{ item["nom"] }} : {{ item["description"]|raw }}</strong><br />
+			Statut actuel : {{ item["statut"] }} --- Possédé {{ item["nombre"] }} fois<br />
+			Note : {{ item["note"]|raw }}
+		<div style="float:right;">
+		<a href="{{ path('WS_manager', {'name' : name, 'tool' : tool|lower, 'item' : 'item', 'id' : item['id']}) }}">
+		Modifier</a> <a id = "deleclic{{ item['id'] }}" 
+		onclick="document.getElementById('delebox{{ item['id'] }}').style.display = 'block';
+		document.getElementById('deleclic{{ item['id'] }}').style.display = 'none';">Supprimer</a>
+		<div style="display:none" id="delebox{{ item['id'] }}"><a 
+		onclick="document.getElementById('iddelmatos').value = {{ item['id'] }};
+		document.getElementById('matosdelform').submit();" >
+		Confirmer la suppression</a></div></div><br /><br /></div>
+{% endfor %}
+<br/><br/>
+<a href="{{ path('WS_manager', {'name' : name, 'tool' : tool|lower, 'item' : 'item', 'id' : 0}) }}">
+Ajouter une entrée</a></div><input type="text" style="display:none;"
+ name="iddelmatos" id="iddelmatos"/></form>

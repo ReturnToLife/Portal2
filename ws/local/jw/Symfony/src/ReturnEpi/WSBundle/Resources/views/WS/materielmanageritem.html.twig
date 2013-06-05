@@ -1,0 +1,33 @@
+<div class="row"><form method="post" 
+{% if id != 0 %} id="matosmodform" {% else %} id="matosaddform" {% endif %}
+action="{{ path('WS_manager', {'name' : name, 'tool' : tool|lower}) }}">
+<a href="{{ path('WS_manager', {'name' : name, 'tool' : tool|lower}) }}">
+Retour à la liste du matériel de l'asso <strong>{{ name }}</strong></a><br/><br/>
+
+<strong>{% if id != 0 %} Formulaire de modification {% else %}
+ Formulaire d'ajout {% endif %}</strong>
+<br /><br />
+* Nom : <input type="text" size=60 {% if id != 0 %}value="{{ infos['materiel']['nom']|raw }}"{% endif %}
+name="nommatos" id="nommatos" /><br /><br />Description : <br />
+<textarea name="descmatos" id="descmatos" cols="50" rows="5">
+{% if id != 0 %}{{ infos['materiel']['description']|raw }}{% endif %}</textarea><br /><br />
+Statut : <select name="statutmatos" id="statutmatos" >
+{% for item in infos['statut'] %} <option value="{{ item['statut'] }}"
+{% if id != 0 and item['statut'] == infos['materiel']['statut'] %}selected="selected"{% endif %}>
+{{ item['statut'] }}</option>{% endfor %}</select> 
+&nbsp;&nbsp; * Nombre : <input type="text" {% if id != 0 %}
+value="{{ infos['materiel']['nombre'] }}"{% endif %}
+name="nbrmatos" id="nbrmatos" size=2 /><br /><br />Note : <br />
+<textarea name="notematos" id="notematos" cols="50" rows="3">
+{% if id != 0 %}{{ infos['materiel']['note']|raw }}{% endif %}</textarea><br /><br />
+{% if id != 0 %}
+<input type="submit" value="Modifier" name="sendmodmatos" id="sendmodmatos" />
+{% else %}
+<input type="submit" value="Ajouter" name="sendaddmatos" id="sendaddmatos" />
+{% endif %}
+<br/><br/>
+<a href="{{ path('WS_manager', {'name' : name, 'tool' : tool|lower}) }}">
+Retour à la liste du matériel de l'asso <strong>{{ name }}</strong></a></div>
+<input type="text" value="{{ id }}" style="display:none;"
+ name="saveiditem" id="saveiditem" />
+</form>

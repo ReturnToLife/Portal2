@@ -1,0 +1,22 @@
+<div class="row"><form method="post">
+{% set it = 0 %}
+{% for item in infos["visible"] %}
+	{% if item["name"] != "groupe" and item["name"] != "vitrine" 
+	and item["name"] != "membres" %}
+		{% set it = it + 1 %}
+		<div class="row"
+			{% if it is even %} style="background-color:#EEEEFF;"
+			{% else %} style="background-color:#EEFFEE;"
+			{% endif %} ><br/>&nbsp;&nbsp;
+			<strong>{{ item["name"] }} : </strong>
+			Afficher <input type="radio" name="vitrine{{ item['id_outil_gestion'] }}"
+			{% if item["visible"] == 1 %} checked="checked" {% endif %} value="1" />
+			Ne pas afficher <input type="radio" name="vitrine{{ item['id_outil_gestion'] }}"
+			{% if item["visible"] == 0 %} checked="checked" {% endif %} value="0" />
+			<br/><br/>
+		</div>
+	{% endif %}
+{% endfor %}
+<br/>
+<input type="submit" value="Modifier" name="sendmodifvitrine" id="sendmodifvitrine"/>
+</div></form>

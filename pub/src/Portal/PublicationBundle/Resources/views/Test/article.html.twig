@@ -1,0 +1,10 @@
+{{ article.title }}<br />
+{{ article.content }}<br />
+{{ article.category }}<br />
+{{ article.type }}<br />
+{{ article.status }}<br />
+{{ article.school }}<br />
+{% for promo in article.promoChoice.promoChoice %}
+    * {{ promo }}<br />
+{% endfor %}
+{{ article.city }}<br />

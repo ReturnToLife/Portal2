@@ -1,0 +1,47 @@
+{% extends "ReturnEpiWSBundle::layout.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	
+	<script>
+	
+	function createRequestObject()
+	{
+		var tmpXmlHttpObject;
+		if (window.XMLHttpRequest)
+		{ 
+			tmpXmlHttpObject = new XMLHttpRequest();
+		}
+		else if (window.ActiveXObject)
+		{
+			tmpXmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		return tmpXmlHttpObject;
+	}
+	
+	</script>
+{% endblock %}
+
+{% block content %}
+	<h1>Content here</h1>
+{% endblock %}
+
+{% block banner %}
+	{{ parent() }}
+{% endblock %}
+
+{% block header %}
+	{{ parent() }}
+{% endblock %}
+
+{% block footer %}
+	{{ parent() }}
+{% endblock %}

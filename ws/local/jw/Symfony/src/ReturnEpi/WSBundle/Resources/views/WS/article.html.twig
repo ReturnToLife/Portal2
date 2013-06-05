@@ -1,0 +1,50 @@
+{% extends "ReturnEpiWSBundle::layout.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}
+
+{% block banner %}
+	{{ parent() }}
+{% endblock %}
+
+{% block header %}
+	{{ parent() }}
+{% endblock %}
+
+{% block content %}
+	<div style="width:25%; position:absolute; margin-left:2%;">
+		<img style="width:100%;" src='
+		{% if article["image"] %} article["image"]
+		{% else %} {{ asset("images/default.gif") }} {% endif %}' />
+		{{ article["image"] }} <br /><br />
+		<div class="row">
+			Publication : {{ article["parution"] }}<br />
+			Concernés : {{ article["ecole"]|raw }}<br />
+			Promotion : {{ article["promo"]|raw }}<br />
+			Ville : {{ article["ville"]|raw }}
+			{% for contrib_type, contrib_tab in contribs %}
+				<br /><br /><strong>{{ contrib_type }} :</strong><br />
+				{% for item in contrib_tab %}{% if loop.index > 1 %},{% endif %}
+				{{ item }}{% endfor %}
+			{% endfor %}
+		</div>
+	</div>
+	<div class="rowarticlescontent" style="margin-left:30%;">
+		<h1>{{ article["titre"]|raw }}</h1><br />
+		<div class="row" >
+		{{ article["contenu"]|raw }} </div>
+	</div>
+{% endblock %}
+
+{% block footer %}
+	{{ parent() }}
+{% endblock %}

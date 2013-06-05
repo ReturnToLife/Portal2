@@ -1,0 +1,70 @@
+
+===============================================================================
+=                                    USAGE                                    =
+===============================================================================
+
+Return (to_life); is the Epitech Official Students Portal.
+
+Requirement
+===========
+
+* PHP >= 5.3
+* libssh2-php
+* Web Server
+* MySQL
+
+Initialization
+==============
+
+1) Create a MySQL database.
+2) Get the latest version of Ionis-Users-Informations (SQL version) :
+   https://github.com/db0company/Ionis-Users-Informations
+3) Edit the "conf.php" file.
+
+===============================================================================
+=                                 DEVELOPMENT                                 =
+===============================================================================
+
+Coding Style
+============
+
+* Variables names
+  Objects attributes : theVariableName, blue, protocolName
+  Internal function variables : like Objects attributes
+  Global variables : categ_name (def_include_dir)
+  Objects methods : like objects attributes
+  Objects getters/setters : getTheVariableName, setProtocolName, isBlue (boolean)
+  Global function names : can_you_sleep
+  Filenames : include/tools.php, src/Portal.class.php (classes),
+  	      src/View.nmsp.php (namespaces)
+
+* Align functions names :
+  private function	hello($arg)
+
+
+Files & Directories
+====================
+
+* src
+  source code
+
+* src/include
+  general includes, countaining global functions, global variable
+
+* src/model
+  get informations to be shown
+
+* src/view
+  echo html
+
+* src/class
+  PHP Classes
+
+* src/nmsp
+  PHP Namespaces
+
+Informations
+============
+
+* src/include/def.php contain directories definitions
+

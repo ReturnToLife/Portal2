@@ -1,0 +1,35 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}
+
+{% block banner %}
+	{{ parent() }}
+	{% include "ReturnEpiWSBundle:WS:assobanner.html.twig" with {"name" : name} %}
+{% endblock %}
+
+{% block header %}
+	{{ parent() }}
+	{% include "ReturnEpiWSBundle:WS:assoheader.html.twig" with {"visible" : visible,
+"name" : name} %}
+{% endblock %}
+
+{% block content %}
+	{{ parent() }}
+	{% include "ReturnEpiWSBundle:WS:assocontent.html.twig" with 
+	{"events" : events, "asso" : asso} %}
+{% endblock %}
+
+{% block footer %}
+	{{ parent() }}
+	{% include "ReturnEpiWSBundle:WS:assofooter.html.twig" with {"asso" : asso} %}
+{% endblock %}

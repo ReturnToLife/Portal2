@@ -1,0 +1,21 @@
+index:
+    pattern: /publication
+    defaults: { _controller: PortalPublicationBundle:Publication:index }
+
+pub_article:
+    pattern: /publication/article
+    defaults: { _controller: PortalPublicationBundle:Publication:article }
+
+pub_flashnews:
+    pattern: /publication/flashnews
+    defaults: { _controller: PortalPublicationBundle:Publication:flashnews }
+
+pub_event:
+    pattern: /publication/event
+    defaults: { _controller: PortalPublicationBundle:Publication:event }
+
+pub_success:
+    pattern: /publication/success/{item}
+    defaults: { _controller: PortalPublicationBundle:Publication:success }
+    requirements:
+	item: article|flashnews|event

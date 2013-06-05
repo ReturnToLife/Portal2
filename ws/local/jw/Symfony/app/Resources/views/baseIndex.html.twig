@@ -1,0 +1,94 @@
+{% extends "::base.html.twig" %}
+
+{% block javascripts %}
+	<script>
+	
+	</script>
+{% endblock %}
+
+{% block content %}
+	{{ parent() }}
+	<div class="divindexflash">
+	{% block flash %}
+		<div class="divflash">
+		{% block flash1 %}
+		<h2>FLASH NEW 1</h2>
+		{% endblock %}
+		</div>
+		<div class="divflash">
+		{% block flash2 %}
+		<h2>FLASH NEW 2</h2>
+		{% endblock %}
+		</div>
+		<div class="divflash">
+		{% block flash3 %}
+		<h2>FLASH NEW 3</h2>
+		{% endblock %}
+		</div>
+		<div class="divflash">
+		{% block flash4	%}
+		<h2>FLASH NEW 4</h2>
+		{% endblock %}
+		</div>
+		<div class="divflash">
+		{% block flash5 %}
+		<h2>FLASH NEW 5</h2>
+		{% endblock %}
+		</div>
+	{% endblock %}
+	</div>
+
+	<div class="divindexevent">
+	{% block event %}
+		<div class="divevent" style="float:left;">
+		{% block event1 %}
+		<h2>EVENT 1</h2>
+		{% endblock %}
+		</div>
+		<div class="divevent" style="float:right;">
+		{% block event2 %}
+		<h2>EVENT 2</h2>
+		{% endblock %}
+		</div>
+	{% endblock %}
+	</div>
+
+	<div class="divindexarticle">
+	{% block article %}
+		<div class="divartleft" style="background-color:#CCCCCC" id="a1"
+		onclick="scrollDivUp('a1');">
+			<a href="articles/1">
+			{% block artgeneral %}
+			<h2>ARTICLES GENERAUX</h2>
+			{% endblock %}
+			</a>
+		</div>
+		<div class="divartright" style="background-color:#33AA33" id="a2"
+		onclick="scrollDivUp('a2');">
+			<a href="articles/2">
+			{% block artpedago %}
+			<h2>ARTICLES PEDAGO</h2>
+			{% endblock %}
+			</a>
+		</div>
+		
+		<div class="divartleft" style="background-color:#3333CC" id="a3"
+		onclick="scrollDivUp('a3');">
+			<a href="articles/3">
+			{% block artlabo %}
+			<h2>ARTICLES LABO</h2>
+			{% endblock %}
+			</a>
+		</div>
+		
+		<div class="divartright" style="background-color:#EE8800" id="a4"
+		onclick="scrollDivUp('a4');">
+			<a href="articles/4">
+			{% block artasso %}
+			<h2>ARTICLES ASSO</h2>
+			{% endblock %}
+			</a>
+		</div>
+	{% endblock %}
+	</div>
+{% endblock %}

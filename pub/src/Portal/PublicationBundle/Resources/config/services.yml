@@ -1,0 +1,7 @@
+parameters:
+#    portal_publication.example.class: Portal\PublicationBundle\Example
+
+services:
+#    portal_publication.example:
+#        class: %portal_publication.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

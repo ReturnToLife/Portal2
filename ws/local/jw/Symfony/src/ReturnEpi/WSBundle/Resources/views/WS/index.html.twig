@@ -1,0 +1,80 @@
+{% extends "ReturnEpiWSBundle::layoutIndex.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}
+
+{% block banner %}
+	{{ parent() }}
+{% endblock %}
+
+{% block header %}
+	{{ parent() }}
+{% endblock %}
+
+{% block flash %}
+	<form method="post" id="sendflash" name="sendflash">
+	{% for item in flashs %}
+		<div class="divflash">
+			<div class="divflashcontent">{{ item["contenu"]|raw }}</div>
+			<a onclick="document.getElementById('difflash').value = 1;
+			document.getElementById('flashid').value = {{ item['id'] }};
+			document.forms['sendflash'].submit();">+1</a> /
+			<a onclick="document.getElementById('difflash').value = -1;
+			document.getElementById('flashid').value = {{ item['id'] }};
+			document.forms['sendflash'].submit();">-1</a>
+			<div style="float:right">{{ flashscores[loop.index - 1]}}</div>
+		</div>
+	{% endfor %}
+	<input type="text" value="0" id="difflash" name="difflash" style="display:none;" />
+	<input type="text" value="0" id="flashid" name="flashid" style="display:none;" />
+	</form>
+{% endblock %}
+
+{% block event1 %}
+	<div style="width:45%;height:100%;float:left;"><img style="width:100%;" src='
+	{% if events[0]["image"] %} {{ asset("images/"~events[0]["image"]) }} 
+	{% else %} {{ asset("images/default.gif") }} {% endif %}' /> {{ events[0]["image"] }} </div>
+	<div class="row">
+		<div style="width:55%;height:100%;float:right;"><b>{{ events[0]["titre"]|raw }}</b><br />
+		{{ events[0]["contenu"]|raw }}<br /><br />
+		<div style="float:right;">{% if events[0]["parution"] != 0 %}
+		<strong>Date de l'event</strong><br/> {{ events[0]["parution"] }}{% endif %}</div></div>
+	</div>
+{% endblock %}
+{% block event2 %}
+	<div style="width:45%;height:100%;float:left;"><img style="width:100%;" src='
+	{% if events[1]["image"] %} events[1]["image"]
+	{% else %} {{ asset("images/default.gif") }} {% endif %}' /></div>
+	<div class="row">
+		<div style="width:55%;height:100%;float:right;"><b>{{ events[1]["titre"]|raw }}</b><br />
+		{{ events[1]["contenu"]|raw }}<br /><br />
+		<div style="float:right;">{% if events[1]["parution"] != 0 %}
+		<strong>Date de l'event</strong><br/> {{ events[1]["parution"] }}{% endif %}</div></div>
+	</div>
+{% endblock %}
+
+{% block artgeneral %}
+{{ parent() }}
+{% endblock %}
+{% block artpedago %}
+{{ parent() }}
+{% endblock %}
+{% block artlabo %}
+{{ parent() }}
+{% endblock %}
+{% block artasso %}
+{{ parent() }}
+{% endblock %}
+
+{% block footer %}
+	{{ parent() }}
+{% endblock %}

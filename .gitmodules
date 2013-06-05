@@ -1,0 +1,3 @@
+[submodule "scripts/fill_db/users/iui"]
+	path = scripts/fill_db/users/iui
+	url = git://github.com/db0company/Ionis-Users-Informations.git

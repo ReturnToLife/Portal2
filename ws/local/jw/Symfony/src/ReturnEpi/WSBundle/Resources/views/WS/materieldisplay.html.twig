@@ -1,0 +1,13 @@
+<div class="row">
+{% set it = 0 %}
+{% for item in infos["materiel"] %}
+	{% set it = it + 1 %}
+		<div class="row"
+			{% if it is even %} style="background-color:#EEEEFF;"
+			{% else %} style="background-color:#EEFFEE;"
+			{% endif %} ><br />
+			<strong>{{ item["nom"] }} : {{ item["description"]|raw }}</strong><br />
+			Statut actuel : {{ item["statut"] }} --- Possédé {{ item["nombre"] }} fois<br />
+			Note : {{ item["note"]|raw }}<br /><br /></div>
+{% endfor %}
+<br/><br/>

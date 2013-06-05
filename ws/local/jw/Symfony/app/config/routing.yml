@@ -1,0 +1,10 @@
+# app/config/routing.yml
+
+ReturnEpiWSBundle:
+    resource: "@ReturnEpiWSBundle/Resources/config/routing.yml"
+    prefix:   /Return
+
+# Internal routing configuration to handle ESI
+#_internal:
+#   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#   prefix:   /_internal

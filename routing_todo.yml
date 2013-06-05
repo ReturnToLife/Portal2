@@ -1,0 +1,11 @@
+task_new:
+    pattern: todo/new
+    defaults: { _controller: ReturnTaskBundle:Default:new }
+
+task_success:
+    pattern: todo/new/success
+    defaults: { _controller: ReturnTaskBundle:Default:success }
+
+task_view:
+    pattern: todo/view
+    defaults: { _controller: ReturnTaskBundle:Default:view }

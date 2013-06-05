@@ -1,0 +1,53 @@
+{% extends '::base.html.twig' %}
+
+{# {% form_theme form 'PortalPublicationBundle:Form:fields.html.twig' %} #}
+
+{% block title %}
+    Article Publication
+{% endblock %}
+
+{% block body %}
+<form action="{{ path('pub_article') }}" method="post" {{ form_enctype(form) }} novalidate>
+  {{ form_errors(form) }}
+
+  <h3>Article</h3>
+  <div>
+    {{ form_label(form.title, 'Titre') }}<br />
+    {{ form_errors(form.title) }}
+    {{ form_widget(form.title) }}
+  </div>
+  <div>
+    {{ form_label(form.content, 'Texte') }}<br />
+    {{ form_errors(form.content) }}
+    {{ form_widget(form.content) }}
+  </div>
+  <h3>Tags</h3>
+  <div>
+    {{ form_label(form.category, 'Catégorie') }}<br />
+    {{ form_errors(form.category) }}
+    {{ form_widget(form.category) }}
+  </div>
+  <div>
+    {{ form_label(form.school, 'Ecole') }}<br />
+    {{ form_errors(form.school) }}
+    {{ form_widget(form.school) }}
+  </div>
+  <div>
+    {{ form_label(form.promoChoice.promoChoice, 'Promo') }}
+    {{ form_errors(form.promoChoice.promoChoice) }}
+    {{ form_widget(form.promoChoice.promoChoice) }}
+    {{ form_label(form.promoChoice.other, 'ou ') }}
+    {{ form_errors(form.promoChoice.other) }}
+    {{ form_widget(form.promoChoice.other) }}
+  </div>
+  <div>
+    {{ form_label(form.city, 'Ville') }}<br />
+    {{ form_errors(form.city) }}
+    {{ form_widget(form.city) }}
+  </div>
+
+  {{ form_rest(form) }}
+
+  <input type="submit" />
+</form>
+{% endblock %}
